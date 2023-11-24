@@ -10,4 +10,5 @@ TRACK_DIFFERENCE = 175
 
 #IMAGES
 BACKGROUND = "images/background.png"
-#TRAIN = "images/train.png"
+RED_TRAIN = "images/redTrain.png"
+SOLID_FENCE = "images/solidFence.png"

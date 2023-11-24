@@ -2,8 +2,8 @@ import random
 from constants import *
 
 class Obstacle:
-    obstacleSizes = {"train":(300,150), "solid fence": (20,100),
-                     "hollow fence":(20,100)} #length, height
+    obstacleSizes = {"train":(300,180), "solid fence": (20,210),
+                     "hollow fence":(20,210)} #length, height
 
     def __init__(self, typeObstacle, track):
         self.typeObstacle = typeObstacle
@@ -11,12 +11,13 @@ class Obstacle:
 
         obstacleLength = Obstacle.obstacleSizes[typeObstacle][0]
         obstacleHeight = Obstacle.obstacleSizes[typeObstacle][1]
-        middleOfTrackY = TRACK_1_MIDDLE + TRACK_DIFFERENCE*track
+        trackDy = TRACK_DIFFERENCE*track
+        middleOfTrackY = TRACK_1_MIDDLE + trackDy
 
         #these are for updating locations
-        self.startLocation = (WIDTH, TRACK_1_BOTTOM + obstacleHeight)
+        self.startLocation = (WIDTH, TRACK_1_BOTTOM + trackDy - obstacleHeight)
         self.endLocation = (WIDTH+ obstacleLength,
-                            TRACK_1_BOTTOM + obstacleHeight)
+                            TRACK_1_BOTTOM + trackDy - obstacleHeight)
         #this is for collisons
         self.middleHeight = obstacleHeight + middleOfTrackY 
 
