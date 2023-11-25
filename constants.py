@@ -10,5 +10,11 @@ TRACK_DIFFERENCE = 175
 
 #IMAGES
 BACKGROUND = "images/background.png"
-RED_TRAIN = "images/redTrain.png"
-SOLID_FENCE = "images/solidFence.png"
+
+#OBSTACLES
+OBSTACLES = ["Train", "Fence"]
+CUSTOMIZATION = {"Train" : ["red"], "Fence":["solid"]}
+
+#MISC
+ACCELERATION = 10
+GRAVITY = 0.5
