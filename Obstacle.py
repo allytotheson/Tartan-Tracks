@@ -32,8 +32,8 @@ class Obstacle:
 class Train(Obstacle):
     def __init__(self, track, color):
         super().__init__(track)
-        self.length = 300
-        self.height = 180
+        self.width = 300
+        self.height = 240
         self.color = color
 
         self.location = (WIDTH, TRACK_1_BOTTOM + self.trackDy - self.height)
@@ -42,7 +42,7 @@ class Train(Obstacle):
 class Fence(Obstacle):
     def __init__(self, track, fill):
         super().__init__(track)
-        self.length = 60
+        self.width = 60
         self.height = 200
         self.fill = fill
 
@@ -50,9 +50,9 @@ class Fence(Obstacle):
         self.name = f"images/{self.fill}Fence.png"
 
 #maybe clean up by putting inside class
-def isLegal(curO, newO):
+def isLegalObstacle(curO, newO):
     for obstacle in curO:
-        if ((obstacle.location[0] + obstacle.length >= newO.location[0]) and
+        if ((obstacle.location[0] + obstacle.width >= newO.location[0]) and
             (obstacle.track == newO.track)): #if any obstacle is off-screen
             #and the tracks are same, they overlap
             return False
@@ -71,7 +71,7 @@ def loadObstacle(curObstacles):
         newObstacle = Fence(randomTrack, randomCustomization)
     #return newObstacle
 
-    if isLegal(curObstacles, newObstacle):
+    if isLegalObstacle(curObstacles, newObstacle):
         return newObstacle
     else:
         return loadObstacle(curObstacles)#is this okay

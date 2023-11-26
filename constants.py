@@ -10,7 +10,7 @@ TRACK_DIFFERENCE = 175
 
 #IMAGES
 BACKGROUND = "images/background.png"
-
+COIN = "images/coin.png"
 #OBSTACLES
 OBSTACLES = ["Train", "Fence"]
 CUSTOMIZATION = {"Train" : ["red"], "Fence":["solid"]}
